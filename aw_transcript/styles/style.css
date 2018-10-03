@@ -1,0 +1,95 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Muli);
+
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Saira');
+
+body {
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Saira', sans-serif;
+    color: gray;
+    /*background: url(../img/iconos/degradado.svg) no-repeat;*/
+}
+
+a {
+    color: gray;
+}
+
+i {
+    color: gray;
+}
+
+footer {
+    font-family: 'Saira', sans-serif;
+}
+
+.alt_div {
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #225d4f;
+    border-right-color: #225d4f;
+    border-bottom-color: #225d4f;
+    border-left-color: #225d4f;
+    border-top-width: thin;
+    border-right-width: thin;
+    border-bottom-width: thin;
+    border-left-width: thin;
+}
+
+h1 {
+    font-family: 'Saira', sans-serif;
+}
+
+h2 {
+    font-family: 'Saira', sans-serif;
+}
+
+h3 {
+    font-family: 'Saira', sans-serif;
+}
+
+h4 {
+    font-family: 'Saira', sans-serif;
+}
+
+h5 {
+    font-family: 'Saira', sans-serif;
+}
+
+.gvHeader th {
+    padding: 7px;
+    background-color: #1A4C1A;
+    color: #fff;
+    border: 1px solid #bbb;
+    font-weight: normal;
+}
+
+.gvChildHeader th {
+    padding: 4px;
+    background-color: #999966;
+    color: #fff;
+    border: 1px solid #bbb;
+    font-weight: normal;
+}
+
+.gvRow td {
+    padding: 7px;
+    background-color: #ffffff;
+    border: 1px solid #bbb;
+}
+
+.gvAltRow td {
+    padding: 7px;
+    background-color: #f1f1f1;
+    border: 1px solid #bbb;
+}
+
+.collapsed-row {
+    display: none;
+    padding: 0px;
+    margin: 0px;
+}

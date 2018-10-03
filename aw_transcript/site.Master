@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="site.master.cs" Inherits="aw_transcript.site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <!-- Bootstrap -->
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/video_test.png" type="image/png" />
+
+    <title>transcript</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <script>
+        function CheckOne(obj) {
+            var grid = obj.parentNode.parentNode.parentNode;
+            var inputs = grid.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (obj.checked && inputs[i] != obj && inputs[i].checked) {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+        function StateCity(input) {
+            var displayIcon = "img" + input;
+            if ($("#" + displayIcon).attr("src") == "img/plus.png") {
+                $("#" + displayIcon).closest("tr")
+                    .after("<tr><td></td><td colspan = '100%'>" + $("#" + input)
+                        .html() + "</td></tr>");
+                $("#" + displayIcon).attr("src", "img/minus.png");
+            } else {
+                $("#" + displayIcon).closest("tr").next().remove();
+                $("#" + displayIcon).attr("src", "img/plus.png");
+            }
+        }
+    </script>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <br />
+    <footer class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <asp:Image CssClass="img-responsive" ID="Image1" runat="server" ImageUrl="~/img/Transcript-100.jpg" Width="128" Height="64" />
+                    <h4>Prueba de Concepto</h4>
+                    <p>
+                        Soporte
+                        <br />
+                        <%--  Celular: (044) 55.84.84.34.92
+                        <br />--%>
+                        transcriptsoporte@gmail.com y soportetranscript@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

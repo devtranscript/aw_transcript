@@ -1,0 +1,514 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6063357C-F274-4D88-9D3C-D8E122580A45}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aw_transcript</RootNamespace>
+    <AssemblyName>aw_transcript</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="acceso.aspx" />
+    <Content Include="cargar.aspx" />
+    <Content Include="consultar_salas.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="dd_ts.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dd_ts.edmx</DependentUpon>
+      <LastGenOutput>dd_ts.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="dd_ts.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dd_ts.edmx</DependentUpon>
+      <LastGenOutput>dd_ts.cs</LastGenOutput>
+    </Content>
+    <Content Include="estatus_carga.aspx" />
+    <Content Include="estatus_carga_ext.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="img\back_arrow.png" />
+    <Content Include="img\iconos\administrador%402x.png" />
+    <Content Include="img\iconos\administrador.png" />
+    <Content Include="img\iconos\administrador.svg" />
+    <Content Include="img\iconos\contro de usuarios%402x.png" />
+    <Content Include="img\iconos\contro de usuarios.png" />
+    <Content Include="img\iconos\contro de usuarios.svg" />
+    <Content Include="img\iconos\control de centros%402x.png" />
+    <Content Include="img\iconos\control de centros.png" />
+    <Content Include="img\iconos\control de centros.svg" />
+    <Content Include="img\iconos\degradado%402x.png" />
+    <Content Include="img\iconos\degradado.png" />
+    <Content Include="img\iconos\degradado.svg" />
+    <Content Include="img\iconos\grabaciones%402x.png" />
+    <Content Include="img\iconos\grabaciones.png" />
+    <Content Include="img\iconos\grabaciones.svg" />
+    <Content Include="img\iconos\herramientas%402x.png" />
+    <Content Include="img\iconos\herramientas.png" />
+    <Content Include="img\iconos\herramientas.svg" />
+    <Content Include="img\iconos\operador%402x.png" />
+    <Content Include="img\iconos\operador.png" />
+    <Content Include="img\iconos\operador.svg" />
+    <Content Include="img\iconos\perfil%402x.png" />
+    <Content Include="img\iconos\perfil.png" />
+    <Content Include="img\iconos\perfil.svg" />
+    <Content Include="img\iconos\resumen estadisticas%402x.png" />
+    <Content Include="img\iconos\resumen estadisticas.png" />
+    <Content Include="img\iconos\resumen estadisticas.svg" />
+    <Content Include="img\iconos\supervisor%402x.png" />
+    <Content Include="img\iconos\supervisor.png" />
+    <Content Include="img\iconos\supervisor.svg" />
+    <Content Include="img\iconos\videos%402x.png" />
+    <Content Include="img\iconos\videos.png" />
+    <Content Include="img\iconos\videos.svg" />
+    <Content Include="img\ico_back.png" />
+    <Content Include="img\ico_exit.png" />
+    <Content Include="img\juzgados.png" />
+    <Content Include="img\minus.png" />
+    <Content Include="img\next_arrow.png" />
+    <Content Include="img\pdf_ico.png" />
+    <Content Include="img\plus.png" />
+    <Content Include="img\salas.png" />
+    <Content Include="img\Transcript-100.jpg" />
+    <Content Include="img\transcript_10x10.png" />
+    <Content Include="img\tribunal.png" />
+    <Content Include="img\video_test.png" />
+    <Content Include="juzgados_salas.aspx" />
+    <Content Include="menu.aspx" />
+    <Content Include="menu_herramientas.aspx" />
+    <Content Include="menu_resumen.aspx" />
+    <Content Include="menu_tribunal.aspx" />
+    <Content Include="menu_usuarios.aspx" />
+    <Content Include="perfil.aspx" />
+    <Content Include="programar_carga.aspx" />
+    <Content Include="programar_depuracion.aspx" />
+    <Content Include="registro_inicial.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="dd_ts.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dd_ts.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="dd_ts.edmx.diagram">
+      <DependentUpon>dd_ts.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="seguimiento.aspx" />
+    <Content Include="styles\style.css" />
+    <Content Include="tribunal.aspx" />
+    <Content Include="usuarios.aspx" />
+    <Content Include="videos_consultados.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acceso.aspx.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acceso.aspx.designer.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargar.aspx.cs">
+      <DependentUpon>cargar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cargar.aspx.designer.cs">
+      <DependentUpon>cargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="conn_svr.cs" />
+    <Compile Include="consultar_salas.aspx.cs">
+      <DependentUpon>consultar_salas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultar_salas.aspx.designer.cs">
+      <DependentUpon>consultar_salas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dd_ts.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dd_ts.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_ts.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_ts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dd_ts.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="encrypta.cs" />
+    <Compile Include="estatus_carga.aspx.cs">
+      <DependentUpon>estatus_carga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estatus_carga.aspx.designer.cs">
+      <DependentUpon>estatus_carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estatus_carga_ext.aspx.cs">
+      <DependentUpon>estatus_carga_ext.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estatus_carga_ext.aspx.designer.cs">
+      <DependentUpon>estatus_carga_ext.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fact_especializa.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus_material.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus_qa.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_exp.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_mat.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_err.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_rfc.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_usuarios.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="inf_caducidad_videos.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_caducidad_videos_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_dispositivos.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_dispositivos_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_empresa.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_exp_mat.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fecha_transformacion.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fecha_transformacion_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_juzgados.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_juzgados_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_log_ruta.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_master_jvl.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_material.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_material_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_material_ext.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_material_ext_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ruta_videos.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ruta_videos_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_salas.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_salas_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sepomex.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_tribunal.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_tribunal_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usuarios.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usuarios_dep.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="juzgados_salas.aspx.cs">
+      <DependentUpon>juzgados_salas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="juzgados_salas.aspx.designer.cs">
+      <DependentUpon>juzgados_salas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_herramientas.aspx.cs">
+      <DependentUpon>menu_herramientas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_herramientas.aspx.designer.cs">
+      <DependentUpon>menu_herramientas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_resumen.aspx.cs">
+      <DependentUpon>menu_resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_resumen.aspx.designer.cs">
+      <DependentUpon>menu_resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_tribunal.aspx.cs">
+      <DependentUpon>menu_tribunal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_tribunal.aspx.designer.cs">
+      <DependentUpon>menu_tribunal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu_usuarios.aspx.cs">
+      <DependentUpon>menu_usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_usuarios.aspx.designer.cs">
+      <DependentUpon>menu_usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfil.aspx.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfil.aspx.designer.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="programar_carga.aspx.cs">
+      <DependentUpon>programar_carga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="programar_carga.aspx.designer.cs">
+      <DependentUpon>programar_carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="programar_depuracion.aspx.cs">
+      <DependentUpon>programar_depuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="programar_depuracion.aspx.designer.cs">
+      <DependentUpon>programar_depuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registro_inicial.aspx.cs">
+      <DependentUpon>registro_inicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registro_inicial.aspx.designer.cs">
+      <DependentUpon>registro_inicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seguimiento.aspx.cs">
+      <DependentUpon>seguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seguimiento.aspx.designer.cs">
+      <DependentUpon>seguimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site.Master.cs">
+      <DependentUpon>site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site.Master.designer.cs">
+      <DependentUpon>site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tribunal.aspx.cs">
+      <DependentUpon>tribunal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tribunal.aspx.designer.cs">
+      <DependentUpon>tribunal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.aspx.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarios.aspx.designer.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="videos_consultados.aspx.cs">
+      <DependentUpon>videos_consultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videos_consultados.aspx.designer.cs">
+      <DependentUpon>videos_consultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="v_salas.cs">
+      <DependentUpon>dd_ts.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="ts_operacion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56748</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56748/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
